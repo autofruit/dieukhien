@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Điều Khiển</title>
+</head>
+<body>
+    <h1>Điều Khiển Thiết Bị</h1>
+    <button onclick="sendRequest('http://192.168.1.10/on')">Bật</button>
+    <button onclick="sendRequest('http://192.168.1.10/off')">Tắt</button>
+
+    <script>
+        function sendRequest(url) {
+            // Gửi yêu cầu HTTP GET đến URL
+            fetch(url)
+                .then(response => {
+                    console.log("Yêu cầu đã được gửi đến: " + url);
+                })
+                .catch(error => {
+                    console.error("Lỗi khi gửi yêu cầu: ", error);
+                });
+        }
+    </script>
+</body>
+</html>
